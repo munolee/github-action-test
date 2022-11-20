@@ -23,4 +23,4 @@ jobs:
         with:
           script: |
             const { syncFromMain } = require('./dist/bundle.js')
-            syncFromMain()
+            syncFromMain({context, github})
