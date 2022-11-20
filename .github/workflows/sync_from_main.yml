@@ -18,15 +18,9 @@ jobs:
       - name: checkout branch
         uses: actions/checkout@v3
 
-      - name: test package json
-        run: |
-          cat package.json
-          ls 
-          tree
-
       - name: Synchronize from main branch
         uses: actions/github-script@v6
         with:
           script: |
-            const { syncFromMain } = require('./src/sync-from-main.js')
+            const { syncFromMain } = require('.dist/bundle.js')
             syncFromMain()
