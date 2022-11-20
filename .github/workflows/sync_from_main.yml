@@ -20,6 +20,7 @@ jobs:
       - run: |
           git push origin main2:alpha --force
           git push origin main2:staging --force
+          trap ERR
 
       - name: Synchronize from main branch
         uses: actions/github-script@v6
