@@ -44,15 +44,24 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.syncFromMain = void 0;
-function pushBranch(githubScript) {
-    var _a = githubScript.context.repo, repo = _a.repo, owner = _a.owner;
-    var prList = githubScript.github.rest.pulls.list({
-        owner: owner,
-        repo: repo,
+var pushBranch = function (githubScript) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, repo, owner, prList;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
+            case 0:
+                _a = githubScript.context.repo, repo = _a.repo, owner = _a.owner;
+                return [4 /*yield*/, githubScript.github.rest.pulls.list({
+                        owner: owner,
+                        repo: repo,
+                    })];
+            case 1:
+                prList = _b.sent();
+                console.log('--------------- 🖨 Get PR List ---------------');
+                console.log('🔔 PR List: ', prList);
+                return [2 /*return*/];
+        }
     });
-    console.log('--------------- 🖨 Get PR List ---------------');
-    console.log('🔔 PR List: ', prList);
-}
+}); };
 var syncFromMain = function (githubScript) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {

@@ -1,8 +1,8 @@
 import { GithubScriptInput } from './types/github-script.type';
 
-function pushBranch(githubScript: GithubScriptInput) {
+const pushBranch = async (githubScript: GithubScriptInput) => {
     const { repo, owner } = githubScript.context.repo;
-    const prList = githubScript.github.rest.pulls.list({
+    const prList = await githubScript.github.rest.pulls.list({
         owner,
         repo,
     });
