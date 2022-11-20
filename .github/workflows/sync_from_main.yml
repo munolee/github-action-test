@@ -1,0 +1,22 @@
+# alpha, staging branch를 main 브랜치로 동기화
+
+name: 🧹 Synchronize all branches to main branch
+run-name: 🧹 Synchronize all branches to main branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      caution:
+        description: Sync을 입력해주세요.
+        required: true
+        type: string
+
+jobs:
+  reset-branch:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+      - run: |
+          git push origin main:alpha --force
+          git push origin main:staging --force
