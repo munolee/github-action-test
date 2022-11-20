@@ -26,5 +26,5 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { default: script } = await import('./src/sync-from.main.ts')
-            await script()
+            const { syncFromMain } = require('./src/sync-from.main.js')
+            syncFromMain()
