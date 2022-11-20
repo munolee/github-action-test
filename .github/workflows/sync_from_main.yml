@@ -21,6 +21,8 @@ jobs:
       - name: test package json
         run: |
           cat package.json
+          ls 
+          tree
 
       - name: Synchronize from main branch
         uses: actions/github-script@v6
