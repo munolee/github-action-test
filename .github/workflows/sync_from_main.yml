@@ -24,12 +24,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          - name: Install NPM
-            run: |
-              npm init --y
-              echo "//npm.pkg.github.com/:_authToken=${{ secrets.npm_token }}" > ~/.npmrc
-              echo "@munolee:registry=https://npm.pkg.github.com" >> ~/.npmrc
-              npm install @munolee/gas-app --force
+
+      - name: Install NPM
+        run: |
+          npm init --y
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.npm_token }}" > ~/.npmrc
+          echo "@munolee:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          npm install @munolee/gas-app --force
 
       - name: remove alpha/staging label
         uses: actions/github-script@v6
