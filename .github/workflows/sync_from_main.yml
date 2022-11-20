@@ -16,14 +16,14 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout branch
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: test package json
         run: |
           echo package.json
 
-      - name : Synchronize from main branch
-      - uses: actions/github-script@v6
+      - name: Synchronize from main branch
+        uses: actions/github-script@v6
         with:
           script: |
           const { default: script } = await import('./src/sync-from.main.ts')
