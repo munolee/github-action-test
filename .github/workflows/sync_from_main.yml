@@ -20,7 +20,7 @@ jobs:
 
       - name: test package json
         run: |
-          echo package.json
+          cat package.json
 
       - name: Synchronize from main branch
         uses: actions/github-script@v6
