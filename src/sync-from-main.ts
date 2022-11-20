@@ -8,7 +8,6 @@ function pushBranch(githubScript: GithubScriptInput) {
     });
     console.log('--------------- 🖨 Get PR List ---------------');
     console.log('🔔 PR List: ', prList);
-
 }
 
 export const syncFromMain = async (githubScript: GithubScriptInput) => {
