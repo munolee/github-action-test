@@ -64,6 +64,17 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@munolee/gas-app@^1.0.0":
+  "integrity" "sha512-2Q9dRyHLVJWJHujfN7rAhshHMoPakPC9MfdTq+6gTVOEW3B3BYQNCNts2G7VQb76NvazCGmbd//qWuSqgQIb2w=="
+  "resolved" "https://npm.pkg.github.com/download/@munolee/gas-app/1.0.0/457d49dd2d3c2e7330fb1eaf379151fb9c41e53d"
+  "version" "1.0.0"
+  dependencies:
+    "@actions/github" "^5.0.3"
+    "@octokit/rest" "^18.12.0"
+    "@octokit/types" "^6.35.0"
+    "dayjs" "^1.11.3"
+    "prettier" "^2.6.2"
+
 "@octokit/auth-token@^2.4.4":
   "integrity" "sha512-r5FVUJCOLl19AxiuZD2VRZ/ORjp/4IN98Of6YJoJOkY75CIBuYfmiNHGrDwXr+aLGG55igl9QrxX3hbiXlLb+g=="
   "resolved" "https://registry.npmjs.org/@octokit/auth-token/-/auth-token-2.5.0.tgz"
@@ -466,6 +477,11 @@
     "shebang-command" "^2.0.0"
     "which" "^2.0.1"
 
+"dayjs@^1.11.3":
+  "integrity" "sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ=="
+  "resolved" "https://registry.npmjs.org/dayjs/-/dayjs-1.11.6.tgz"
+  "version" "1.11.6"
+
 "deprecation@^2.0.0", "deprecation@^2.3.1":
   "integrity" "sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ=="
   "resolved" "https://registry.npmjs.org/deprecation/-/deprecation-2.3.1.tgz"
@@ -775,6 +791,11 @@
   "version" "4.2.0"
   dependencies:
     "find-up" "^4.0.0"
+
+"prettier@^2.6.2":
+  "integrity" "sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g=="
+  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.7.1.tgz"
+  "version" "2.7.1"
 
 "punycode@^2.1.0":
   "integrity" "sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A=="

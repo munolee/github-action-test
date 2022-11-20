@@ -18,13 +18,22 @@ jobs:
       - name: checkout branch
         uses: actions/checkout@v3
       - run: |
-          git push origin main2:alpha --force
-          git push origin main2:staging --force
-          trap ERR
+          git push origin main:alpha --force
+          git push origin main:staging --force
 
-      - name: Synchronize from main branch
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          - name: Install NPM
+            run: |
+              npm init --y
+              echo "//npm.pkg.github.com/:_authToken=${{ secrets.npm_token }}" > ~/.npmrc
+              echo "@munolee:registry=https://npm.pkg.github.com" >> ~/.npmrc
+              npm install @munolee/gas-app --force
+
+      - name: remove alpha/staging label
         uses: actions/github-script@v6
         with:
           script: |
-            const { syncFromMain } = require('./dist/bundle.js')
-            syncFromMain({context, github})
+            const { removeLabel } = require('./dist/bundle.js')
+            removeLabel({context, github})
