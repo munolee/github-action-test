@@ -15,7 +15,11 @@ jobs:
   reset-branch:
     runs-on: ubuntu-20.04
     steps:
-      - name: Synchronize from main branch
+      - name: checkout branch
+        uses: actions/checkout@v3
+        run: echo package.json
+
+      - name : Synchronize from main branch
         uses: actions/github-script@v6
         with:
           script: |
