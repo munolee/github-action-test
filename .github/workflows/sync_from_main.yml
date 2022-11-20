@@ -18,8 +18,8 @@ jobs:
       - name: checkout branch
         uses: actions/checkout@v3
       - run: |
-          git push origin main:alpha2 --force
-          git push origin main:staging2 --force
+          git push origin main2:alpha --force
+          git push origin main2:staging --force
 
       - name: Synchronize from main branch
         uses: actions/github-script@v6
