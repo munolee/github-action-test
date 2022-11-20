@@ -15,8 +15,9 @@ jobs:
   reset-branch:
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v3
-      - run: |
-          git push origin main:alpha --force
-          git push origin main:staging --force
+      - name: Synchronize from main branch
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const script = require('./sync-from-main.ts')
+            console.log(script({github, context}))
