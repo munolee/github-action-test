@@ -15,11 +15,11 @@ jobs:
   reset-branch:
     runs-on: ubuntu-20.04
     steps:
-#      - name: checkout branch
-#        uses: actions/checkout@v3
-#      - run: |
-#          git push origin main:alpha --force
-#          git push origin main:staging --force
+      - name: checkout branch
+        uses: actions/checkout@v3
+      - run: |
+          git push origin main:alpha --force
+          git push origin main:staging --force
 
       - uses: actions/setup-node@v3
         with:
