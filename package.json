@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/munolee/github-action-test/issues"
   },
-  "homepage": "https://github.com/munolee/github-action-test#readme"
+  "homepage": "https://github.com/munolee/github-action-test#readme",
+  "dependencies": {
+    "@munolee/gas-app": "^1.0.27"
+  }
 }
