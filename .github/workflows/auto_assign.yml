@@ -21,9 +21,9 @@ jobs:
           echo "@munolee:registry=https://npm.pkg.github.com" >> ~/.npmrc
           npm install @munolee/gas-app --force
 
-      - name: Create Release
+      - name: Auto Assign
         uses: actions/github-script@v6
         with:
           script: |
-            const { auto-assign } = require('@munolee/gas-app')
-            await auto-assign({ context, github })
+            const { autoAssign } = require('@munolee/gas-app')
+            await autoAssign({ context, github })
