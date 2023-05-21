@@ -1,0 +1,29 @@
+name: 👤 Auto Author Assign
+
+on:
+  pull_request_target:
+    types: [ opened, reopened ]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install NPM
+        run: |
+          npm init --y
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.npm_token }}" > ~/.npmrc
+          echo "@munolee:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          npm install @munolee/gas-app --force
+
+      - name: Auto Assign
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { autoAssign } = require('@munolee/gas-app')
+            await autoAssign({ context, github })
